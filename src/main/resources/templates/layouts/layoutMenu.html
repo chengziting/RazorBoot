@@ -1,0 +1,93 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <!--jquery-->
+    <script src="/webjars/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/webjars/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <!--bootstrap-->
+    <link href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!--angularjs-->
+    <script src="/webjars/angularjs/1.5.4/angular.min.js"></script>
+    <!--customer js-->
+    <script src="/js/utils.js"></script>
+
+    <script type="text/javascript">
+        function selectNaviItem(id) {
+            $("#" + id).addClass("active");
+        }
+
+    </script>
+</head>
+<body>
+
+<!--start menu-->
+<nav class="navbar navbar-default fullwidth" ng-app="mainMenuApp" ng-controller="mainMenuController">
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                   aria-expanded="false">
+                    Preference <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">System Setting</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">About Razor</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"
+                   aria-haspopup="true">
+                    Users&Roles<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li id="main_menu_item_user_list"><a ng-click="itemSelected('main_menu_item_resource_upload')" href="{{menuItems.main_menu_item_user_list}}">Users Management</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Roles Management</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                    Resources Manager<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li id="main_menu_item_resource_upload"><a ng-click="itemSelected('main_menu_item_resource_upload')" href="{{menuItems.main_menu_item_resource_upload}}">Upload File</a> </li>
+                    <li role="separator" class="divider"></li>
+                    <li id="main_menu_item_resource_list"><a ng-click="itemSelected('main_menu_item_resource_upload')" href="{{menuItems.main_menu_item_resource_list}}">File List</a> </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script>
+    var menuItems = {
+        "main_menu_item_user_list":"/users/list?token="+getToken(),
+        "main_menu_item_resource_upload":"/resource/index?token="+getToken(),
+        "main_menu_item_resource_list":"/resource/filelist?token="+getToken()
+    };
+    var app = angular.module("mainMenuApp",[]);
+    app.controller('mainMenuController',function ($scope) {
+        $scope.menuItems = menuItems;
+        $scope.itemSelected=function (id) {
+            selectNaviItem(id);
+        }
+    });
+</script>
+
+<!--end menu-->
+
+
+
+<div layout:fragment="bodyContent"></div>
+
+
+</body>
+</html>

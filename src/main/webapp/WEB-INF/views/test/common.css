@@ -1,0 +1,10 @@
+#target_Marquee{
+    position: fixed;
+    z-index: 1000;
+    background-color: gray;
+    padding:20px;
+    opacity: 0.4;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+
+}

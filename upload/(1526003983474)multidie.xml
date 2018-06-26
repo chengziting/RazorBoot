@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Job jobName="111" layoutName="111" jobType="frank" provider="JTE" schemaVersion="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.w3.org/2001/XMLSchema-instance">
+    <Info customer="ARAXI" creator="ARAXI" createMultipleLayouts="true" workstyle="0" isCopyJobTicket="false"></Info>
+    <CopyFromJob CopyFromJobName=""></CopyFromJob>
+    <Template>
+        <Name></Name>
+    </Template>
+    <ArtworkList>
+        <Artwork id="1" page="0" width="884.062500" height="824.000000" rotation="0.000000">
+            <Name>\\pladevtest\AraxiVolume_PLADEVTEST_J\testdatas\Hungry Cat Carton\Hungry Cat Carton 1.pdf</Name>
+        </Artwork>
+        <Artwork id="2" page="0" width="884.062500" height="824.000000" rotation="0.000000">
+            <Name>\\pladevtest\AraxiVolume_PLADEVTEST_J\testdatas\Hungry Cat Carton\Hungry Cat Carton 2.pdf</Name>
+        </Artwork>
+    </ArtworkList>
+    <DieList>
+        <Die width="1928.952000" height="1403.064000" centerHorizontally="true" centerVertically="true" horizontalOffset="0.000000" verticalOffset="0.000000" forceReassign="false" alignTop="false">
+            <Name>\\pladevtest\AraxiVolume_PLADEVTEST_J\testdatas\Hungry Cat Carton\Hungry Cat Carton.CF2</Name>
+            <Stations numberDirection="Horizontal" numberPath="Snake" numberStart="1" numberStartCorner="UpperLeft" mirrorHorizontal="false" mirrorVertical="false" side="front">
+                <Station number="3" artwork="1" stationName="" artworkRotation="0.000000"></Station>
+                <Station number="1" artwork="1" stationName="" artworkRotation="0.000000"></Station>
+                <Station number="4" artwork="1" stationName="" artworkRotation="0.000000"></Station>
+                <Station number="2" artwork="1" stationName="" artworkRotation="0.000000"></Station>
+            </Stations>
+        </Die>
+        <Die width="0.000000" height="0.000000" centerHorizontally="true" centerVertically="true" horizontalOffset="0.000000" verticalOffset="0.000000" forceReassign="false" alignTop="false">
+            <Name>\\pladevtest\AraxiVolume_PLADEVTEST_J\testdatas\Hungry Cat Carton\221256.CFF</Name>
+            <Stations numberDirection="Horizontal" numberPath="Snake" numberStart="1" numberStartCorner="UpperLeft" mirrorHorizontal="false" mirrorVertical="false" side="front"></Stations>
+        </Die>
+    </DieList>
+    <StepRepeatList>
+        <StepRepeat id="" name="" rows="1" cols="1" staggerType="0" staggerAmountType="0" staggerAmount="0.000000" gapX="0.000000" gapY="0.000000" x="0.000000" y="0.000000" wrap="false" cropMarksVisible="false" center="false" mirrorVertical="false" mirrorHorizontal="false" srRotation="0.0000000000000000" leftBleedMargin="9.000000" rightBleedMargin="9.000000" topBleedMargin="9.000000" bottomBleedMargin="9.000000">
+            <StepRepeatArtworkList>
+                <StepRepeatArtwork ownerId="" referenceId="" side="front" x="0.000000" y="0.000000" rotation="0.0000000000000000" scaleX="1.000000" scaleY="1.000000" dummyWidth="0.000000" dummyHeight="0.000000"></StepRepeatArtwork>
+            </StepRepeatArtworkList>
+        </StepRepeat>
+    </StepRepeatList>
+    <MarkList>
+        <SmartMark id="">
+            <Name></Name>
+        </SmartMark>
+        <NormalMark id="">
+            <Name></Name>
+            <MarkPlacementList>
+                <MarkPlacement ownerId="" x="0.000000" y="0.000000" rotation="0.000000" scaleX="0.000000" scaleY="0.000000"></MarkPlacement>
+            </MarkPlacementList>
+        </NormalMark>
+    </MarkList>
+    <Shopmap>
+        <PressSheet shopmapKey="PressSheet:-708224622:Persistence" displayString="40 x 30 in" height="40.000000" width="30.000000" unit="in" grain="" name=""></PressSheet>
+        <SheetfedPress shopmapKey="" displayString="" setback="0.000000" gripper="0.000000" platebend="0.000000" unit="" name="" firstToKnife="0.000000"></SheetfedPress>
+        <Film shopmapKey="" displayString="" height="" width="" unit="" name=""></Film>
+        <Plate shopmapKey="" displayString="" height="" width="" unit="" base="" name=""></Plate>
+        <OutputDevice distortionCompensationX="" distortionCompensationY=""></OutputDevice>
+    </Shopmap>
+    <ColorSeparations>
+        <Separation color="" order="" printAsColorName="" overlap="" isUsedInMarks=""></Separation>
+    </ColorSeparations>
+    <ASPS>
+        <SizedTo object="None" dieLine="-1"></SizedTo>
+        <Margin left="0.000000" right="0.000000" top="0.000000" bottom="0.000000"></Margin>
+        <Center horizontal="false" vertical="false"></Center>
+        <Rounding type="None" step="0.000000"></Rounding>
+    </ASPS>
+    <PreferenceMap>
+        <Preference key="ASPS.SizeToNone.DisplayUnit" value="inches"></Preference>
+        <Preference key="ASPS.SizeToDie" value="false"></Preference>
+        <Preference key="ASPS.SizeToDie.DisplayUnit" value="inches"></Preference>
+        <Preference key="ASPS.SizeToDie.IsAlwaysRounding" value="false"></Preference>
+        <Preference key="ASPS.SizeToDie.RoundingStep" value="0.000000"></Preference>
+        <Preference key="ASPS.SizeToDie.RoundingTo" value="0"></Preference>
+        <Preference key="ASPSSizePref" value="1"></Preference>
+        <Preference key="ASPSLineTypeForSizePref" value="0"></Preference>
+        <Preference key="ASPS.SizeToStepRepeat" value="false"></Preference>
+        <Preference key="ASPS.SizeToStepRepeat.DisplayUnit" value="inches"></Preference>
+        <Preference key="ASPS.SizeToStepRepeat.IsAlwaysRounding" value="false"></Preference>
+        <Preference key="ASPS.SizeToStepRepeat.RoundingStep" value="0.000000"></Preference>
+        <Preference key="ASPS.SizeToStepRepeat.RoundingTo" value="0"></Preference>
+        <Preference key="ASPS.SizeToFilm" value="false"></Preference>
+        <Preference key="ASPS.SizeToFilm.DisplayUnit" value="inches"></Preference>
+        <Preference key="ASPS.SizeToFilm.IsAlwaysRounding" value="false"></Preference>
+        <Preference key="ASPS.SizeToFilm.RoundingStep" value="0.000000"></Preference>
+        <Preference key="ASPS.SizeToFilm.RoundingTo" value="0"></Preference>
+        <Preference key="ASPS.SizeToPlate" value="false"></Preference>
+        <Preference key="ASPS.SizeToPlate.DisplayUnit" value="inches"></Preference>
+        <Preference key="ASPS.SizeToPlate.IsAlwaysRounding" value="false"></Preference>
+        <Preference key="ASPS.SizeToPlate.RoundingStep" value="0.000000"></Preference>
+        <Preference key="ASPS.SizeToPlate.RoundingTo" value="0"></Preference>
+        <Preference key="KeylineRepresentation" value="Trimbox"></Preference>
+        <Preference key="Die.UseBleedLine" value="false"></Preference>
+        <Preference key="Die.BleedLineNum" value="0"></Preference>
+        <Preference key="Die.NextSegmentAngleType" value="greatest"></Preference>
+        <Preference key="Die.KnifeSeparationMax" value="2.1"></Preference>
+        <Preference key="Die.NextSegmentTolerance" value="0.5"></Preference>
+        <Preference key="BleedExtractionFlatteningValue" value="0.7"></Preference>
+        <Preference key="Die.Filter.ExcludeTopLevel" value="true"></Preference>
+        <Preference key="Die.Filter.CFF2.LineTypesToExclude" value=""></Preference>
+        <Preference key="Die.Filter.DDES2.LineTypesToExclude" value=""></Preference>
+        <Preference key="DieSizePref" value="1"></Preference>
+        <Preference key="DieLineTypeForSizePref" value="0"></Preference>
+        <Preference key="SendAnyway" value="false"></Preference>
+    </PreferenceMap>
+    <Misc>
+        <Bleed margin="9.000000" bleedPathReuse="true" autoResolveRectangularBleeds="false" autoSplitBleedOverlap="false"></Bleed>
+    </Misc>
+    <CustomFields></CustomFields>
+    <RemoveResources>
+        <ArtworkList>
+            <Artwork page="">
+                <Name></Name>
+            </Artwork>
+        </ArtworkList>
+        <MarkList>
+            <Mark>
+                <Name></Name>
+            </Mark>
+            <NormalMark id="">
+                <Name></Name>
+                <MarkPlacementList>
+                    <MarkPlacement ownerId="" x="0.000000" y="0.000000" rotation="0.000000" scaleX="0.000000" scaleY="0.000000"></MarkPlacement>
+                </MarkPlacementList>
+            </NormalMark>
+        </MarkList>
+        <StepRepeatList>
+            <StepRepeat name=""></StepRepeat>
+        </StepRepeatList>
+    </RemoveResources>
+</Job>
