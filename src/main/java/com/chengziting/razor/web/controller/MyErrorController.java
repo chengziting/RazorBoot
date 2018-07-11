@@ -30,22 +30,25 @@ public class MyErrorController extends BaseController implements ErrorController
     private ErrorAttributes errorAttributes;
 
     @RequestMapping("/error")
-    public String error(HttpServletRequest request,WebRequest webRequest){
+    public ModelAndView error(HttpServletRequest request,WebRequest webRequest){
         Map<String,Object> errorMap = getErrorAttributes(request,webRequest,true);
         Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("errorMessage",errorMap.get("message"));
         if(status != null){
             int statusCode = Integer.valueOf(status.toString());
             switch (statusCode){
                 case 404:
-                    return "notfound";
+                    mv.setViewName("/error/notfound");
                 case 500:
-                    return "intererror";
+
+                    mv.setViewName("/error/intererror");
                 default:
 
                     break;
             }
         }
-        return "";
+        return mv;
     }
 
     private String getParamUrl(HttpServletRequest request){

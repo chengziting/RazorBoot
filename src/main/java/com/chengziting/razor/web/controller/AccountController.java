@@ -48,11 +48,14 @@ public class AccountController extends BaseController{
 
     @RequestMapping("login")
     @Transactional
-    public String login(){
+    public String login() throws Exception {
+        if(1>0){
+            throw new Exception("123");
+        }
         return "/account/login";
     }
     @RequestMapping("register")
-    public String register(HttpServletRequest request){
+    public String register(HttpServletRequest request) {
         return "/account/register";
     }
 
