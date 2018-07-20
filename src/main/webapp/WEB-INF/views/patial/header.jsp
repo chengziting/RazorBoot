@@ -17,4 +17,5 @@
 <script src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <script src="/js/utils.js"></script>
+<link href="/css/global.css" rel="stylesheet"/>
 <%--<script src="/js/dialog.js"></script>--%>

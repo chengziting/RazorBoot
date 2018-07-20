@@ -16,4 +16,32 @@ import java.util.Optional;
 public interface RoleRepository extends JpaRepository<Role,String> {
     @Query("select ur.user from UserRole ur where ur.role.id = :roleId")
     List<User> getUsers(@Param("roleId") String roleId);
+
+    /**
+     * search with name and status
+     * @param status
+     * @return
+     */
+    @Query("select r from Role r where r.status=:status")
+    List<Role> search(@Param("status") int status);
+
+    /**
+     * search with name(like)
+     * @param name
+     * @return
+     */
+    @Query("select r from Role r where r.name like %:name%")
+    List<Role> search(@Param("name") String name);
+
+    /**
+     * search with status
+     * @param name
+     * @param status
+     * @return
+     */
+    @Query("select r from Role r where r.status=:status and r.name like %:name%")
+    List<Role> search(@Param("name") String name,@Param("status") int status);
+
+    Role findByName(String name);
+    Role checkRole(String name);
 }

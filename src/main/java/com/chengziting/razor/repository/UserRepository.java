@@ -3,6 +3,8 @@ package com.chengziting.razor.repository;
 import com.chengziting.razor.model.persistent.Role;
 import com.chengziting.razor.model.persistent.User;
 import com.chengziting.razor.repository.base.BaseRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -22,4 +24,7 @@ public interface UserRepository extends JpaRepository<User,String> {
     List<Role> getRoles(@Param("userId")String userId);
     @Query("select u from User u where u.role.id=:roleId")
     List<User> getUsersWithRole(@Param("roleId")String roleId);
+    @Query(value = "select u from User u inner join Role r on u.role.id = r.id where r.name = :roleName",
+            countQuery = "select count(u) from User u inner join Role r on u.role.id = r.id where r.name = :roleName")
+    Page<User> findByRoleName(@Param("roleName") String roleName, Pageable pageable);
 }

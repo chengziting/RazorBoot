@@ -1,11 +1,11 @@
 package com.chengziting.razor.model.persistent;
 
 import com.chengziting.razor.model.system.GUIDGenerator;
-import com.sun.istack.internal.NotNull;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by user on 2018/5/8.

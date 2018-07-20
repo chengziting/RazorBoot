@@ -37,4 +37,12 @@ public class RazorContext {
         return token;
     }
 
+    public synchronized static String getToken(HttpServletRequest request){
+        String token = null;
+        if((token = request.getParameter("token")) == null && (token = request.getHeader("token"))==null){
+            return null;
+        }
+        return token;
+    }
+
 }

@@ -5,6 +5,7 @@ import com.chengziting.razor.core.IResponse;
 import com.chengziting.razor.core.JsonResponse;
 import com.chengziting.razor.core.annotations.WithoutAuthorize;
 
+import com.chengziting.razor.core.exception.NoPermissionException;
 import com.chengziting.razor.model.persistent.Role;
 import com.chengziting.razor.model.persistent.User;
 import com.chengziting.razor.service.IRolesService;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -49,9 +51,6 @@ public class AccountController extends BaseController{
     @RequestMapping("login")
     @Transactional
     public String login() throws Exception {
-        if(1>0){
-            throw new Exception("123");
-        }
         return "/account/login";
     }
     @RequestMapping("register")

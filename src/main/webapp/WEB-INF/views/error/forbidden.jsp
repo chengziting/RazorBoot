@@ -12,7 +12,7 @@
 </head>
 <body>
     <p>
-        You do not have authority to access this page: <strong><%=request.getAttribute("message")%></strong>
+        You do not have permission to access this page: <strong><%=request.getAttribute("message")%></strong>
     </p>
 </body>
 </html>

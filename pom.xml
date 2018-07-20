@@ -39,6 +39,13 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!--add mysql json type support-->
+		<!--<dependency>-->
+			<!--<groupId>com.vladmihalcea</groupId>-->
+			<!--<artifactId>hibernate-types-52</artifactId>-->
+			<!--<version>1.2.0</version>-->
+		<!--</dependency>-->
+
 		<!--&lt;!&ndash;add support thymeleaf&ndash;&gt;-->
 		<!--<dependency>-->
 			<!--<groupId>org.springframework.boot</groupId>-->
@@ -119,6 +126,7 @@
 			<version>1.12.0</version>
 		</dependency>
 
+		<!--add angularjs support-->
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>angularjs</artifactId>

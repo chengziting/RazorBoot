@@ -4,18 +4,21 @@ import com.chengziting.razor.core.IResponse;
 import com.chengziting.razor.core.JsonResponse;
 import com.chengziting.razor.core.annotations.Authorization;
 import com.chengziting.razor.model.persistent.Role;
+import com.chengziting.razor.model.persistent.User;
 import com.chengziting.razor.service.impl.RoleService;
+import com.chengziting.razor.service.impl.UserService;
 import com.chengziting.razor.utils.StringUtils;
 import com.chengziting.razor.web.model.Validatable;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -27,6 +30,8 @@ import java.util.List;
 public class RoleController extends BaseController{
     @Autowired
     private RoleService roleService;
+    @Autowired
+    private UserService userService;
 
     @RequestMapping("roleinfo")
     public ModelAndView roleInfo(String id){
@@ -37,8 +42,12 @@ public class RoleController extends BaseController{
     }
 
     @RequestMapping("list")
-    public ModelAndView roleList(){
-        List<Role> roleList = roleService.getList();
+    public ModelAndView roleList(HttpServletRequest request){
+        String name = request.getParameter("name");
+        String status = request.getParameter("status");
+        List<Role> roleList = roleService.search(name,status);
+        Page<User> page = userService.findByRoleName("user", PageRequest.of(0,1));
+        System.out.println(String.format("There are %s users in role %s.",page.getTotalElements(),"user"));
         ModelAndView mv = new ModelAndView("/roles/list");
         mv.addObject("rolelist",roleList);
         return mv;

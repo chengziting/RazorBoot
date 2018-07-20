@@ -1,4 +1,4 @@
-package com.chengziting.razor.web.controller;
+package com.chengziting.razor.web.controller.demo;
 
 
 import com.chengziting.razor.core.annotations.WithoutAuthorize;
@@ -22,10 +22,21 @@ public class TestController {
     private UserRepository userRepository;
 
     @RequestMapping("test")
+    @WithoutAuthorize
     public String test(String p, HttpServletRequest request){
         List<User> userList = userRepository.findAll();
         request.setAttribute("title","test"+p);
         request.setAttribute("userlist",userList);
         return "/test/test";
+    }
+
+    @RequestMapping("permission")
+    public String testPermission(){
+        return "/test/permission";
+    }
+
+    @RequestMapping("treeview")
+    public String testTreeview(){
+        return "/test/treeview";
     }
 }

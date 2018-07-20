@@ -1,12 +1,10 @@
 package com.chengziting.razor.model.persistent;
 
 import com.chengziting.razor.model.system.GUIDGenerator;
-import com.sun.istack.internal.NotNull;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.List;
-import java.util.Set;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by user on 2018-01-05.
@@ -18,6 +16,10 @@ public class Role extends BaseModel {
     private String name;
     private int status;
 //    private List<User> users;
+
+    @Column(name = "Permission")
+    private String permission;
+
 
     @Id
     @GeneratedValue(generator = "uuid")
@@ -59,6 +61,15 @@ public class Role extends BaseModel {
 //        this.users = users;
 //    }
 
+
+    public String getPermission() {
+        return permission;
+    }
+
+    public void setPermission(String permission) {
+        this.permission = permission;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if(obj == null || !(obj instanceof Role))
@@ -71,4 +82,5 @@ public class Role extends BaseModel {
     public int hashCode() {
         return this.name.hashCode();
     }
+
 }

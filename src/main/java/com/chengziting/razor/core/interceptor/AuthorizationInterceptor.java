@@ -3,6 +3,7 @@ package com.chengziting.razor.core.interceptor;
 import com.chengziting.razor.core.SpringContextUtil;
 import com.chengziting.razor.core.annotations.Administrator;
 import com.chengziting.razor.core.annotations.WithoutAuthorize;
+import com.chengziting.razor.core.exception.NoPermissionException;
 import com.chengziting.razor.model.persistent.Role;
 import com.chengziting.razor.model.persistent.User;
 import com.chengziting.razor.service.IRolesService;
@@ -161,6 +162,9 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
         Role tmpRole = new Role();
         tmpRole.setName("admin");
         if(!userService.getRoles(user.getId()).contains(tmpRole)){
+            if(1>0){
+                throw new NoPermissionException();
+            }
             response.sendRedirect(request.getContextPath() + "/error/forbidden?token="+ SymmetricEncoder.AESEncode(key) + "&url="+request.getRequestURI());
         }
     }

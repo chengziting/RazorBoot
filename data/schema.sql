@@ -55,6 +55,20 @@ constraint FK_FILE_USER foreign key (UserId) references Users (Id) on delete no 
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+drop table if exists `pages`;
+CREATE TABLE `pages` (
+`id` varchar(36) not null,
+`controller` varchar(50) not null,
+`action` varchar(50) not null,
+`url` varchar(100) not null,
+`module` varchar(50) not null,
+`createdate` datetime not null default current_timestamp,
+`updatedate` datetime null,
+`status` int not null default 0,
+primary key (`id`)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 /*
 --init data
 insert into roles(id,name) values('dd3bfcc7-3325-11e8-9dfb-64006a54771e','guest');

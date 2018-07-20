@@ -1,10 +1,10 @@
 package com.chengziting.razor.model.persistent;
 
 import com.chengziting.razor.model.system.GUIDGenerator;
-import com.sun.istack.internal.NotNull;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;

@@ -7,6 +7,8 @@ import com.chengziting.razor.repository.base.BaseRepository;
 import com.chengziting.razor.service.IUserService;
 import com.chengziting.razor.service.base.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
@@ -46,6 +48,11 @@ public class UserService extends BaseService<User,String> implements IUserServic
     @Override
     public List<User> getUsersWithRole(String roleId) {
         return userRepository.getUsersWithRole(roleId);
+    }
+
+    @Override
+    public Page<User> findByRoleName(String roleName, Pageable pageable) {
+        return userRepository.findByRoleName(roleName,pageable);
     }
 
 }

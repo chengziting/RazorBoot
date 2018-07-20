@@ -1,6 +1,8 @@
 package com.chengziting.razor.web.controller;
 
+import com.chengziting.razor.core.RazorContext;
 import com.chengziting.razor.core.annotations.WithoutAuthorize;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.boot.web.servlet.error.ErrorController;
@@ -25,7 +27,7 @@ import java.util.Map;
 @Controller
 @WithoutAuthorize
 public class MyErrorController extends BaseController implements ErrorController{
-
+    private Logger logger = Logger.getLogger(MyErrorController.class);
     @Autowired
     private ErrorAttributes errorAttributes;
 
@@ -40,9 +42,15 @@ public class MyErrorController extends BaseController implements ErrorController
             switch (statusCode){
                 case 404:
                     mv.setViewName("/error/notfound");
+                    break;
                 case 500:
 
                     mv.setViewName("/error/intererror");
+                    break;
+                case 403:
+                    logger.error(String.format("%s forbidden.",RazorContext.getCurrentUser(RazorContext.getToken(request)).getName()));
+                    mv.setViewName("error/forbidden");
+                    break;
                 default:
 
                     break;
