@@ -69,6 +69,18 @@ primary key (`id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+drop table if exists rb_department;
+create table rb_department
+(
+id varchar(36) not null,
+name varchar(50) not null,
+parentid varchar(36),
+
+primary key(id),
+unique(name)
+)engine=innodb,charset=utf8;
+
+
 /*
 --init data
 insert into roles(id,name) values('dd3bfcc7-3325-11e8-9dfb-64006a54771e','guest');

@@ -1,0 +1,5 @@
+2018-07-17 15:16:49,291  INFO RazorBootApplicationTests:37 - 2cdb8a3e-6480-11e8-b482-64006a54771e_chengziting
+2018-07-17 15:16:49,431  INFO RazorBootApplicationTests:37 - 4afe38b4-6480-11e8-b482-64006a54771e_chengziting1
+2018-07-17 15:16:49,431  INFO RazorBootApplicationTests:37 - 5cc79ee2-62ed-11e8-88e2-64006a54771e_admin
+2018-07-17 15:16:49,447  INFO RazorBootApplicationTests:37 - 8edd809d-62ec-11e8-88e2-64006a54771e_czt
+2018-07-17 15:16:49,447 ERROR RazorBootApplicationTests:43 - java.lang.Exception: a error occurs

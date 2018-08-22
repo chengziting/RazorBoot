@@ -3,7 +3,6 @@ package com.chengziting.razor.service.impl;
 import com.chengziting.razor.model.persistent.Role;
 import com.chengziting.razor.model.persistent.User;
 import com.chengziting.razor.repository.UserRepository;
-import com.chengziting.razor.repository.base.BaseRepository;
 import com.chengziting.razor.service.IUserService;
 import com.chengziting.razor.service.base.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;

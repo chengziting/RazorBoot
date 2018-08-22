@@ -2,7 +2,6 @@ package com.chengziting.razor.repository;
 
 import com.chengziting.razor.model.persistent.Role;
 import com.chengziting.razor.model.persistent.User;
-import com.chengziting.razor.repository.base.BaseRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

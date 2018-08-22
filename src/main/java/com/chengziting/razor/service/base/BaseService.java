@@ -2,8 +2,6 @@ package com.chengziting.razor.service.base;
 
 
 import com.chengziting.razor.model.persistent.BaseModel;
-import com.chengziting.razor.model.system.PagingModel;
-import com.chengziting.razor.repository.base.BaseRepository;
 import org.hibernate.criterion.Criterion;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
